@@ -1,0 +1,546 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix iasis: <http://iasis/vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1c8vjmu2kx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "clinicalRec.json" ;
+	km-dev:modelPublicationTime "1521479284820"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"sex\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"persontreatment\"}],[{\"columnName\":\"sex\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}]]" ;
+	km-dev:hasModelLabel "clinicalRec.json" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"receivesTreatment\"},
+                    {\"columnName\": \"treatmentID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"persontreatment\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return getValue(\\\"treatmentID\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"treatmentID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"persontreatment\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/farahkarim/KarmaExample\",
+                    \"baseURI\": \"\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"patientID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
+                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"iasis:LCPatient1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"sex\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
+                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://iasis/vocab/gender\",
+                    \"DomainLabel\": \"iasis:LCPatient1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"sex\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"sex\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"receivesTreatment\"},
+                    {\"columnName\": \"treatmentID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCTreatment\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCTreatment1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCTreatment\",
+                    \"DomainId\": \"http://iasis/vocab/LCTreatment1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"iasis:LCTreatment1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"treatmentID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"treatmentID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"receivesTreatment\"},
+                    {\"columnName\": \"treatmentDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCTreatment\",
+                    \"DomainId\": \"http://iasis/vocab/LCTreatment1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://iasis/vocab/tDate\",
+                    \"DomainLabel\": \"iasis:LCTreatment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"treatmentDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"treatmentDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"receivesTreatment\"},
+                    {\"columnName\": \"persontreatment\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
+                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://iasis/vocab/birthday\",
+                    \"DomainLabel\": \"iasis:LCPatient1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"persontreatment\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"receivesTreatment\\\"},{\\\"columnName\\\":\\\"persontreatment\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 a rr:TriplesMap .
+
+_:node1c8vjmu2kx1 km-dev:hasTriplesMap km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 .
+
+km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx2 rr:tableName "clinicalRec.json" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasLogicalTable _:node1c8vjmu2kx2 .
+
+km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:logicalTable _:node1c8vjmu2kx2 ;
+	rr:subjectMap _:node1c8vjmu2kx3 .
+
+_:node1c8vjmu2kx1 km-dev:hasSubjectMap _:node1c8vjmu2kx3 .
+
+_:node1c8vjmu2kx3 km-dev:isPartOfMapping _:node1c8vjmu2kx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://iasis/vocab/LCPatient1" ;
+	rr:class iasis:LCPatient ;
+	rr:template "{patientID}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd rr:predicate iasis:gender .
+
+_:node1c8vjmu2kx4 rr:column "sex" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx4 .
+
+km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd rr:objectMap _:node1c8vjmu2kx4 .
+
+km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:predicateObjectMap km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd .
+
+km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd .
+
+km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 rr:predicate iasis:birthday .
+
+_:node1c8vjmu2kx5 rr:column "[\"receivesTreatment\",\"treatmentID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx5 .
+
+km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 rr:objectMap _:node1c8vjmu2kx5 .
+
+km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:predicateObjectMap km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 .
+
+km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 .
+
+km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 a rr:TriplesMap .
+
+_:node1c8vjmu2kx1 km-dev:hasTriplesMap km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 .
+
+km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx6 rr:tableName "clinicalRec.json" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasLogicalTable _:node1c8vjmu2kx6 .
+
+km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 rr:logicalTable _:node1c8vjmu2kx6 ;
+	rr:subjectMap _:node1c8vjmu2kx7 .
+
+_:node1c8vjmu2kx1 km-dev:hasSubjectMap _:node1c8vjmu2kx7 .
+
+_:node1c8vjmu2kx7 km-dev:isPartOfMapping _:node1c8vjmu2kx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://iasis/vocab/LCTreatment1" ;
+	rr:class iasis:LCTreatment ;
+	rr:template "{[\"receivesTreatment\",\"treatmentID\"]}" .
+
+km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a rr:predicate iasis:tDate .
+
+_:node1c8vjmu2kx8 rr:column "[\"receivesTreatment\",\"treatmentDate\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx8 .
+
+km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a rr:objectMap _:node1c8vjmu2kx8 .
+
+km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 rr:predicateObjectMap km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a .
+
+km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+
+_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a .
