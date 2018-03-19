@@ -7,14 +7,13 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1c8vjmu2kx1 a km-dev:R2RMLMapping ;
+_:node1c8vju0p1x1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "clinicalRec.json" ;
-	km-dev:modelPublicationTime "1521479284820"^^xsd:long ;
+	km-dev:modelPublicationTime "1521479516961"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"sex\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"persontreatment\"}],[{\"columnName\":\"sex\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"sex\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"persontreatment\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentDate\"}],[{\"columnName\":\"patientID\"}],[{\"columnName\":\"receivesTreatment\"},{\"columnName\":\"treatmentID\"}],[{\"columnName\":\"sex\"}]]" ;
 	km-dev:hasModelLabel "clinicalRec.json" ;
-	km-dev:hasBaseURI "http://localhost:8080/source/" ;
 	km-dev:hasWorksheetHistory """[
     {
         \"commandName\": \"SubmitPythonTransformationCommand\",
@@ -110,80 +109,6 @@ _:node1c8vjmu2kx1 a km-dev:R2RMLMapping ;
             }
         ],
         \"tags\": [\"Transformation\"]
-    },
-    {
-        \"commandName\": \"SetMetaPropertyCommand\",
-        \"model\": \"new\",
-        \"inputParameters\": [
-            {
-                \"name\": \"hNodeId\",
-                \"type\": \"hNodeId\",
-                \"value\": [{\"columnName\": \"patientID\"}]
-            },
-            {
-                \"name\": \"worksheetId\",
-                \"type\": \"worksheetId\",
-                \"value\": \"W\"
-            },
-            {
-                \"name\": \"selectionName\",
-                \"type\": \"other\",
-                \"value\": \"DEFAULT_TEST\"
-            },
-            {
-                \"name\": \"metaPropertyName\",
-                \"type\": \"other\",
-                \"value\": \"isUriOfClass\"
-            },
-            {
-                \"name\": \"metaPropertyUri\",
-                \"type\": \"other\",
-                \"value\": \"http://iasis/vocab/LCPatient\"
-            },
-            {
-                \"name\": \"metaPropertyId\",
-                \"type\": \"other\",
-                \"value\": \"http://iasis/vocab/LCPatient1\"
-            },
-            {
-                \"name\": \"SemanticTypesArray\",
-                \"type\": \"other\",
-                \"value\": [{
-                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
-                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
-                    \"isPrimary\": true,
-                    \"isProvenance\": false,
-                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
-                    \"DomainLabel\": \"iasis:LCPatient1 (add)\"
-                }]
-            },
-            {
-                \"name\": \"trainAndShowUpdates\",
-                \"type\": \"other\",
-                \"value\": true
-            },
-            {
-                \"name\": \"rdfLiteralType\",
-                \"type\": \"other\",
-                \"value\": \"\"
-            },
-            {
-                \"name\": \"language\",
-                \"type\": \"other\",
-                \"value\": \"\"
-            },
-            {
-                \"name\": \"inputColumns\",
-                \"type\": \"hNodeIdList\",
-                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
-            },
-            {
-                \"name\": \"outputColumns\",
-                \"type\": \"hNodeIdList\",
-                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
-            }
-        ],
-        \"tags\": [\"SemanticType\"]
     },
     {
         \"commandName\": \"SetSemanticTypeCommand\",
@@ -444,103 +369,251 @@ _:node1c8vjmu2kx1 a km-dev:R2RMLMapping ;
             }
         ],
         \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"patientID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
+                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"iasis:LCPatient1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"patientID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://iasis/vocab/LCPatient1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://iasis/vocab/LCPatient\",
+                    \"DomainId\": \"http://iasis/vocab/LCPatient1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"iasis:LCPatient1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"patientID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
     }
 ]""" .
 
-km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 a rr:TriplesMap .
+km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a a rr:TriplesMap .
 
-_:node1c8vjmu2kx1 km-dev:hasTriplesMap km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 .
+_:node1c8vju0p1x1 km-dev:hasTriplesMap km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a .
 
-km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx2 rr:tableName "clinicalRec.json" ;
+_:node1c8vju0p1x2 rr:tableName "clinicalRec.json" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasLogicalTable _:node1c8vjmu2kx2 .
+_:node1c8vju0p1x1 km-dev:hasLogicalTable _:node1c8vju0p1x2 .
 
-km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:logicalTable _:node1c8vjmu2kx2 ;
-	rr:subjectMap _:node1c8vjmu2kx3 .
+km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a rr:logicalTable _:node1c8vju0p1x2 ;
+	rr:subjectMap _:node1c8vju0p1x3 .
 
-_:node1c8vjmu2kx1 km-dev:hasSubjectMap _:node1c8vjmu2kx3 .
+_:node1c8vju0p1x1 km-dev:hasSubjectMap _:node1c8vju0p1x3 .
 
-_:node1c8vjmu2kx3 km-dev:isPartOfMapping _:node1c8vjmu2kx1 ;
+_:node1c8vju0p1x3 km-dev:isPartOfMapping _:node1c8vju0p1x1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://iasis/vocab/LCPatient1" ;
 	rr:class iasis:LCPatient ;
 	rr:template "{patientID}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd rr:predicate iasis:gender .
+km-dev:PredicateObjectMap_52f50b40-e362-4811-bfc0-707271a3564f rr:predicate iasis:birthday .
 
-_:node1c8vjmu2kx4 rr:column "sex" ;
+_:node1c8vju0p1x4 rr:column "[\"receivesTreatment\",\"treatmentID\"]" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx4 .
+_:node1c8vju0p1x1 km-dev:hasObjectMap _:node1c8vju0p1x4 .
 
-km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd rr:objectMap _:node1c8vjmu2kx4 .
+km-dev:PredicateObjectMap_52f50b40-e362-4811-bfc0-707271a3564f rr:objectMap _:node1c8vju0p1x4 .
 
-km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:predicateObjectMap km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd .
+km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a rr:predicateObjectMap km-dev:PredicateObjectMap_52f50b40-e362-4811-bfc0-707271a3564f .
 
-km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+km-dev:PredicateObjectMap_52f50b40-e362-4811-bfc0-707271a3564f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_21244590-d4f1-43d1-b31e-e47295c02edd .
+_:node1c8vju0p1x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_52f50b40-e362-4811-bfc0-707271a3564f .
 
-km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 rr:predicate iasis:birthday .
+km-dev:PredicateObjectMap_e7e6eb8e-ea43-4ebd-9fe8-fffe3141e0f9 rr:predicate iasis:gender .
 
-_:node1c8vjmu2kx5 rr:column "[\"receivesTreatment\",\"treatmentID\"]" ;
+_:node1c8vju0p1x5 rr:column "sex" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx5 .
+_:node1c8vju0p1x1 km-dev:hasObjectMap _:node1c8vju0p1x5 .
 
-km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 rr:objectMap _:node1c8vjmu2kx5 .
+km-dev:PredicateObjectMap_e7e6eb8e-ea43-4ebd-9fe8-fffe3141e0f9 rr:objectMap _:node1c8vju0p1x5 .
 
-km-dev:TriplesMap_25bc047a-1f57-4ba6-9a67-b16bd3782db0 rr:predicateObjectMap km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 .
+km-dev:TriplesMap_9327638a-2780-452b-bce6-24aa0e6b290a rr:predicateObjectMap km-dev:PredicateObjectMap_e7e6eb8e-ea43-4ebd-9fe8-fffe3141e0f9 .
 
-km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+km-dev:PredicateObjectMap_e7e6eb8e-ea43-4ebd-9fe8-fffe3141e0f9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_03f17127-510d-45da-a4ac-bf4f1e7306f9 .
+_:node1c8vju0p1x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e7e6eb8e-ea43-4ebd-9fe8-fffe3141e0f9 .
 
-km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 a rr:TriplesMap .
+km-dev:TriplesMap_167f9fea-80f4-47ef-b7be-3bcb50287d67 a rr:TriplesMap .
 
-_:node1c8vjmu2kx1 km-dev:hasTriplesMap km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 .
+_:node1c8vju0p1x1 km-dev:hasTriplesMap km-dev:TriplesMap_167f9fea-80f4-47ef-b7be-3bcb50287d67 .
 
-km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+km-dev:TriplesMap_167f9fea-80f4-47ef-b7be-3bcb50287d67 km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx6 rr:tableName "clinicalRec.json" ;
+_:node1c8vju0p1x6 rr:tableName "clinicalRec.json" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasLogicalTable _:node1c8vjmu2kx6 .
+_:node1c8vju0p1x1 km-dev:hasLogicalTable _:node1c8vju0p1x6 .
 
-km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 rr:logicalTable _:node1c8vjmu2kx6 ;
-	rr:subjectMap _:node1c8vjmu2kx7 .
+km-dev:TriplesMap_167f9fea-80f4-47ef-b7be-3bcb50287d67 rr:logicalTable _:node1c8vju0p1x6 ;
+	rr:subjectMap _:node1c8vju0p1x7 .
 
-_:node1c8vjmu2kx1 km-dev:hasSubjectMap _:node1c8vjmu2kx7 .
+_:node1c8vju0p1x1 km-dev:hasSubjectMap _:node1c8vju0p1x7 .
 
-_:node1c8vjmu2kx7 km-dev:isPartOfMapping _:node1c8vjmu2kx1 ;
+_:node1c8vju0p1x7 km-dev:isPartOfMapping _:node1c8vju0p1x1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://iasis/vocab/LCTreatment1" ;
 	rr:class iasis:LCTreatment ;
 	rr:template "{[\"receivesTreatment\",\"treatmentID\"]}" .
 
-km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a rr:predicate iasis:tDate .
+km-dev:PredicateObjectMap_ef933b2b-6e43-4e5f-a42c-e001ff000ac5 rr:predicate iasis:tDate .
 
-_:node1c8vjmu2kx8 rr:column "[\"receivesTreatment\",\"treatmentDate\"]" ;
+_:node1c8vju0p1x8 rr:column "[\"receivesTreatment\",\"treatmentDate\"]" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasObjectMap _:node1c8vjmu2kx8 .
+_:node1c8vju0p1x1 km-dev:hasObjectMap _:node1c8vju0p1x8 .
 
-km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a rr:objectMap _:node1c8vjmu2kx8 .
+km-dev:PredicateObjectMap_ef933b2b-6e43-4e5f-a42c-e001ff000ac5 rr:objectMap _:node1c8vju0p1x8 .
 
-km-dev:TriplesMap_668b6363-369b-4e16-a4dc-35ee9e52af27 rr:predicateObjectMap km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a .
+km-dev:TriplesMap_167f9fea-80f4-47ef-b7be-3bcb50287d67 rr:predicateObjectMap km-dev:PredicateObjectMap_ef933b2b-6e43-4e5f-a42c-e001ff000ac5 .
 
-km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1c8vjmu2kx1 .
+km-dev:PredicateObjectMap_ef933b2b-6e43-4e5f-a42c-e001ff000ac5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1c8vju0p1x1 .
 
-_:node1c8vjmu2kx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c151d91e-89cf-46e3-963f-887246dce51a .
+_:node1c8vju0p1x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ef933b2b-6e43-4e5f-a42c-e001ff000ac5 .
