@@ -1,0 +1,574 @@
+{
+    "id": "clinicalRec.json",
+    "name": "clinicalRec.json",
+    "description": null,
+    "sourceColumns": [
+        {
+            "id": "HN103",
+            "hNodeId": "HN103",
+            "columnName": "sex"
+        },
+        {
+            "id": "HN101",
+            "hNodeId": "HN101",
+            "columnName": "patientID"
+        },
+        {
+            "id": "HN110",
+            "hNodeId": "HN110",
+            "columnName": "treatmentID"
+        },
+        {
+            "id": "HN112",
+            "hNodeId": "HN112",
+            "columnName": "treatmentDate"
+        },
+        {
+            "id": "HN155",
+            "hNodeId": "HN155",
+            "columnName": "persontreatment"
+        }
+    ],
+    "mappingToSourceColumns": [
+        {
+            "id": "HN110",
+            "sourceColumnId": "HN110"
+        },
+        {
+            "id": "HN155",
+            "sourceColumnId": "HN155"
+        },
+        {
+            "id": "HN103",
+            "sourceColumnId": "HN103"
+        },
+        {
+            "id": "HN101",
+            "sourceColumnId": "HN101"
+        },
+        {
+            "id": "HN112",
+            "sourceColumnId": "HN112"
+        }
+    ],
+    "graph": {
+        "nodes": [
+            {
+                "id": "http://iasis/vocab/LCPatient1",
+                "label": {
+                    "uri": "http://iasis/vocab/LCPatient",
+                    "rdfsLabel": null
+                },
+                "type": "InternalNode",
+                "modelIds": null
+            },
+            {
+                "id": "HN103",
+                "label": {
+                    "uri": "HN103",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN103",
+                "columnName": "sex",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN103",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/gender",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN103",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/gender",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN103",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/gender",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN103",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/gender",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN103",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/gender",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN101",
+                "label": {
+                    "uri": "HN101",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN101",
+                "columnName": "patientID",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.5253458814670993
+                    },
+                    {
+                        "hNodeId": "HN101",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#columnSubClassOfLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.4746541185329008
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "http://iasis/vocab/LCTreatment1",
+                "label": {
+                    "uri": "http://iasis/vocab/LCTreatment",
+                    "rdfsLabel": null
+                },
+                "type": "InternalNode",
+                "modelIds": null
+            },
+            {
+                "id": "HN110",
+                "label": {
+                    "uri": "HN110",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN110",
+                "columnName": "treatmentID",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.5304327048282899
+                    },
+                    {
+                        "hNodeId": "HN110",
+                        "domain": {
+                            "uri": "http://iasis/vocab/Treatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.4695672951717101
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN112",
+                "label": {
+                    "uri": "HN112",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN112",
+                "columnName": "treatmentDate",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN112",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/tDate",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN112",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/tDate",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN112",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/tDate",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN112",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/tDate",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN112",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/tDate",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "modelIds": null
+            },
+            {
+                "id": "HN155",
+                "label": {
+                    "uri": "HN155",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN155",
+                "columnName": "persontreatment",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN155",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/birthday",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN155",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/birthday",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    },
+                    {
+                        "hNodeId": "HN155",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCPatient",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://iasis/vocab/birthday",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN155",
+                        "domain": {
+                            "uri": "http://iasis/vocab/LCTreatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.5147186470596914
+                    },
+                    {
+                        "hNodeId": "HN155",
+                        "domain": {
+                            "uri": "http://iasis/vocab/Treatment",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.4852813529403086
+                    }
+                ],
+                "modelIds": null
+            }
+        ],
+        "links": [
+            {
+                "id": "http://iasis/vocab/LCPatient1---http://iasis/vocab/gender---HN103",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://iasis/vocab/gender",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://iasis/vocab/LCPatient1---http://isi.edu/integration/karma/dev#classLink---HN101",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://iasis/vocab/LCTreatment1---http://isi.edu/integration/karma/dev#classLink---HN110",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://iasis/vocab/LCTreatment1---http://iasis/vocab/tDate---HN112",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://iasis/vocab/tDate",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://iasis/vocab/LCPatient1---http://iasis/vocab/birthday---HN155",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://iasis/vocab/birthday",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            }
+        ]
+    }
+}
