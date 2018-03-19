@@ -1,0 +1,20 @@
+digraph n0 {
+fontcolor="blue"
+remincross="true"
+label="clinicalRec.json"
+subgraph cluster {
+label="model"
+n2[style="filled",color="white",fillcolor="lightgray",label="LCPatient1"];
+n3[shape="plaintext",style="filled",fillcolor="gold",label="sex"];
+n4[shape="plaintext",style="filled",fillcolor="gold",label="patientID"];
+n5[style="filled",color="white",fillcolor="lightgray",label="LCTreatment1"];
+n6[shape="plaintext",style="filled",fillcolor="gold",label="treatmentID"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="treatmentDate"];
+n8[shape="plaintext",style="filled",fillcolor="gold",label="persontreatment"];
+}
+n2 -> n3[color="brown",fontcolor="black",label="gender"]
+n2 -> n4[color="brown",fontcolor="black",label="classLink"]
+n5 -> n6[color="brown",fontcolor="black",label="classLink"]
+n5 -> n7[color="brown",fontcolor="black",label="tDate"]
+n2 -> n8[color="brown",fontcolor="black",label="birthday"]
+}
